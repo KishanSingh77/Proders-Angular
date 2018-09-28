@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Login</h1>
+  <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+    <div class="form-group col-md-4">
+      <label for="username">Username</label>
+      <input type="email" class="form-control" id="name" required formControlName="username">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password" required>
+    </div>
+
+    <div class="form-group col-md-5">
+      <label for="Remember Me">Remember Me ?</label>
+      <select class="form-control" id="remember" required>
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-12">
+
+      <button type="submit" class="btn btn-success" [disabled]="!credentialsForm.valid">Login</button>
+
+    </div>
+  </form>
+
+ 
+
+</div>
